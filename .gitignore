@@ -1,0 +1,26 @@
+# Upstream Wazuh deployment (local only)
+wazuh-docker/
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*password*
+*secret*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Local runtime and sensitive data
+logs/
+data/
+backups/
+*.log
+*.pcap
+*.pcapng
+
+# Editor and OS files
+.vscode/
+.DS_Store
