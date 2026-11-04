@@ -1,0 +1,20 @@
+services:
+  security-endpoint:
+    build: .
+    container_name: security-endpoint-01
+    hostname: security-endpoint-01
+    restart: unless-stopped
+    volumes:
+      - agent-keys:/agent-keys:ro
+    networks:
+      - wazuh-lab
+
+volumes:
+  agent-keys:
+    external: true
+    name: security-endpoint-agent-keys
+
+networks:
+  wazuh-lab:
+    external: true
+    name: single-node_default
